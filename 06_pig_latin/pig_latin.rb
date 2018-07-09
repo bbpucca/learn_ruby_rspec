@@ -1,35 +1,21 @@
 
 def translate(string)
-  voyelles = "aeiouy"
-consonnes = "bcdfghjklmnpqrstvwxz"
-  string_copy = string
 
-  voyelles.each_char do | objet |
-    if (string[0] ==  objet)
-      string_copy += "ay"
-      return (string_copy)
-    end
-    consonnes.each_char do | objet |
-      if (string[1] == objet)
-        string_copy[string.size] = string[0]
-        string_copy[string.size] = string[1]
-        string_copy[0] =''
-        string_copy[0] =''
-        string_copy += "ay"
-        return string_copy
-      end
-    end
-
-    consonnes.each_char do | objet |
-      if (string[0] ==  objet)
-        string_copy += string[0]
-        string_copy[0] =''
-          string_copy += "ay"
-          return (string_copy)
-      end
-    end
+   vowels = ["a", "e", "i", "o", "u", "y"]
+   phrase = string.split.map { |i|
+   if vowels.include?(i[0])
+       i + "ay"
+   else
+       a=0
+       while vowels.include?(i[a]) == false
+           if (i[a] == "q" && i[a+1] ==  "u")
+               a+=1
+           end
+           a+=1
+       end
+       lettre1 = i.slice!(0..(a-1))
+       i + lettre1 + "ay"
+   end
+}
+phrase.join(" ")
 end
-end
-
-puts translate("apple")
-puts translate("cherry")

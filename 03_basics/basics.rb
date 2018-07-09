@@ -3,7 +3,7 @@ def who_is_bigger(a,b,c)
 
 if 
 
-	a == nil || b == nil || c == nil
+	a == nil || b == nil || c == nil           # si a ou b ou c égal nil alors afficher 'nil detected'
 	return "nil detected"
 
 elsif
@@ -45,9 +45,16 @@ end
 
 
 def magic_array(table)
-	new_table = table.flatten.reverse
-	table_multiplied = new_table.map{|i| i * 2}
-	table_multiplied.select{ |i| i%3 != 0}.uniq.sort
+	new_table = table.flatten.reverse                       # - reversed
+	table_multiplied = new_table.map{|i| i * 2}            # - with each number multiplicated by 2
+	table_multiplied.select{ |i| i%3 != 0}.uniq.sort        # - with each multiple of 3 removed
 end
+
+
+
+  # - with each number duplicate removed (any number should appear only once) >  .uniq
+  # - sorted  > .sort
+
+
 
  

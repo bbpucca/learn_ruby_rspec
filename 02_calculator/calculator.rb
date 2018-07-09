@@ -50,10 +50,12 @@ end
 def factorial(n)
 
 
-if n == 0
+if n == 0              # le factoriel de 0 c'est 1
 1
 else
 n*factorial(n-1)
 
 end
 end
+
+
